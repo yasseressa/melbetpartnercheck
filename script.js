@@ -101,6 +101,10 @@ const verifiedManagers = {
   telegram: ["@melbetpartners", "@melbet_manager", "melbet_manager"],
   whatsapp: ["+971501234567", "971501234567"],
   email: ["b2b@melbetpartners.com", "support@melbetpartners.com", "manager@melbetpartners.com"],
+  instagram: ["@melbet.partners", "melbet.partners", "https://www.instagram.com/melbet.partners/"],
+  youtube: ["@melbetpartners", "melbet partners", "https://www.youtube.com/@melbetpartners"],
+  linkedin: ["melbet-partners", "melbet partners", "https://www.linkedin.com/company/melbet-partners/"],
+  facebook: ["melbetpartners", "melbet partners", "https://www.facebook.com/melbetpartners"],
   skype: ["melbet.partners", "melbet.manager"],
   managerId: ["MB-1024", "MB-2048", "1024", "2048"],
 };
@@ -153,6 +157,10 @@ function updatePlaceholder() {
     telegram: "@melbet_manager",
     whatsapp: "+971501234567",
     email: "b2b@melbetpartners.com",
+    instagram: "@melbet.partners",
+    youtube: "@melbetpartners",
+    linkedin: "melbet-partners",
+    facebook: "melbetpartners",
     skype: "melbet.manager",
     managerId: "MB-1024",
   };
