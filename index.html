@@ -55,19 +55,42 @@
         <h1 id="pageTitle" data-i18n="title">Check your manager in 2 clicks</h1>
 
         <form class="check-form" id="checkerForm" novalidate>
-          <div class="form-field">
-            <label for="searchType" data-i18n="searchOn">Search on</label>
-            <select id="searchType" name="searchType">
-              <option value="telegram">Telegram</option>
-              <option value="whatsapp">WhatsApp</option>
-              <option value="email">Email</option>
-              <option value="instagram">Instagram</option>
-              <option value="youtube">YouTube</option>
-              <option value="linkedin">LinkedIn</option>
-              <option value="facebook">Facebook</option>
-              <option value="skype">Skype</option>
-              <option value="managerId">Manager ID</option>
-            </select>
+          <div class="platform-field">
+            <p class="field-title" data-i18n="searchOn">Search on</p>
+            <div class="platform-tabs" role="radiogroup" aria-label="Search on">
+              <button class="platform-tab is-active" type="button" role="radio" aria-checked="true" data-platform="telegram">
+                <span class="platform-icon" aria-hidden="true">✈</span>
+                <span>Telegram</span>
+              </button>
+              <button class="platform-tab" type="button" role="radio" aria-checked="false" data-platform="facebook">
+                <span class="platform-icon" aria-hidden="true">f</span>
+                <span>Facebook</span>
+              </button>
+              <button class="platform-tab" type="button" role="radio" aria-checked="false" data-platform="instagram">
+                <span class="platform-icon" aria-hidden="true">◎</span>
+                <span>Instagram</span>
+              </button>
+              <button class="platform-tab" type="button" role="radio" aria-checked="false" data-platform="email">
+                <span class="platform-icon" aria-hidden="true">✉</span>
+                <span>Mail</span>
+              </button>
+              <button class="platform-tab" type="button" role="radio" aria-checked="false" data-platform="youtube">
+                <span class="platform-icon" aria-hidden="true">▶</span>
+                <span>YouTube</span>
+              </button>
+              <button class="platform-tab" type="button" role="radio" aria-checked="false" data-platform="linkedin">
+                <span class="platform-icon" aria-hidden="true">in</span>
+                <span>Linkedin</span>
+              </button>
+              <button class="platform-tab" type="button" role="radio" aria-checked="false" data-platform="whatsapp">
+                <span class="platform-icon" aria-hidden="true">☎</span>
+                <span>WhatsApp</span>
+              </button>
+              <button class="platform-tab" type="button" role="radio" aria-checked="false" data-platform="skype">
+                <span class="platform-icon" aria-hidden="true">S</span>
+                <span>Skype</span>
+              </button>
+            </div>
           </div>
 
           <div class="form-field">

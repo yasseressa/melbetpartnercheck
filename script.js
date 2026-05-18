@@ -115,10 +115,11 @@ const languageList = document.querySelector("#languageList");
 const currentLanguage = document.querySelector("#currentLanguage");
 const form = document.querySelector("#checkerForm");
 const resultPanel = document.querySelector("#resultPanel");
-const searchType = document.querySelector("#searchType");
+const platformTabs = document.querySelectorAll("[data-platform]");
 const managerQuery = document.querySelector("#managerQuery");
 
 let activeLanguage = "en";
+let activePlatform = "telegram";
 
 function normalize(value) {
   return value.trim().toLowerCase().replace(/\s+/g, "");
@@ -154,17 +155,16 @@ function applyLanguage(language) {
 
 function updatePlaceholder() {
   const placeholders = {
-    telegram: "@melbet_manager",
+    telegram: "https://t.me/Nickname, @Nickname",
     whatsapp: "+971501234567",
     email: "b2b@melbetpartners.com",
-    instagram: "@melbet.partners",
-    youtube: "@melbetpartners",
-    linkedin: "melbet-partners",
-    facebook: "melbetpartners",
+    instagram: "https://instagram.com/Nickname, @Nickname",
+    youtube: "https://youtube.com/@Nickname, @Nickname",
+    linkedin: "https://linkedin.com/in/Nickname, Nickname",
+    facebook: "https://facebook.com/Nickname, Nickname",
     skype: "melbet.manager",
-    managerId: "MB-1024",
   };
-  managerQuery.placeholder = placeholders[searchType.value];
+  managerQuery.placeholder = placeholders[activePlatform];
 }
 
 function showResult(type, title, body) {
@@ -196,7 +196,20 @@ document.addEventListener("click", (event) => {
   }
 });
 
-searchType.addEventListener("change", updatePlaceholder);
+platformTabs.forEach((tab) => {
+  tab.addEventListener("click", () => {
+    activePlatform = tab.dataset.platform;
+
+    platformTabs.forEach((item) => {
+      const isActive = item === tab;
+      item.classList.toggle("is-active", isActive);
+      item.setAttribute("aria-checked", String(isActive));
+    });
+
+    updatePlaceholder();
+    managerQuery.focus();
+  });
+});
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -209,7 +222,7 @@ form.addEventListener("submit", (event) => {
     return;
   }
 
-  const officialContacts = verifiedManagers[searchType.value].map(normalize);
+  const officialContacts = verifiedManagers[activePlatform].map(normalize);
   const isVerified = officialContacts.includes(normalize(query));
 
   if (isVerified) {
