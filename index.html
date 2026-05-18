@@ -36,18 +36,21 @@
 
       <div class="language-menu">
         <button class="language-button" id="languageButton" type="button" aria-haspopup="listbox" aria-expanded="false">
-          <span id="currentLanguage">en</span>
+          <span class="language-current">
+            <span id="currentFlag" aria-hidden="true">🇬🇧</span>
+            <span id="currentLanguage">en</span>
+          </span>
           <span class="chevron" aria-hidden="true"></span>
         </button>
         <ul class="language-list" id="languageList" role="listbox" aria-label="Language">
-          <li><button type="button" role="option" data-language="ru">ru</button></li>
-          <li><button type="button" role="option" data-language="en">en</button></li>
-          <li><button type="button" role="option" data-language="ar">ar</button></li>
-          <li><button type="button" role="option" data-language="bd">bd</button></li>
-          <li><button type="button" role="option" data-language="fr">fr</button></li>
-          <li><button type="button" role="option" data-language="pt">pt</button></li>
-          <li><button type="button" role="option" data-language="tr">tr</button></li>
-          <li><button type="button" role="option" data-language="uz">uz</button></li>
+          <li><button type="button" role="option" data-language="ru"><span aria-hidden="true">🇷🇺</span> ru</button></li>
+          <li><button type="button" role="option" data-language="en"><span aria-hidden="true">🇬🇧</span> en</button></li>
+          <li><button type="button" role="option" data-language="ar"><span aria-hidden="true">🇸🇦</span> ar</button></li>
+          <li><button type="button" role="option" data-language="bd"><span aria-hidden="true">🇧🇩</span> bd</button></li>
+          <li><button type="button" role="option" data-language="fr"><span aria-hidden="true">🇫🇷</span> fr</button></li>
+          <li><button type="button" role="option" data-language="pt"><span aria-hidden="true">🇵🇹</span> pt</button></li>
+          <li><button type="button" role="option" data-language="tr"><span aria-hidden="true">🇹🇷</span> tr</button></li>
+          <li><button type="button" role="option" data-language="uz"><span aria-hidden="true">🇺🇿</span> uz</button></li>
         </ul>
       </div>
 

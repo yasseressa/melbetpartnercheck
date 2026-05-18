@@ -113,6 +113,7 @@ const languageMenu = document.querySelector(".language-menu");
 const languageButton = document.querySelector("#languageButton");
 const languageList = document.querySelector("#languageList");
 const currentLanguage = document.querySelector("#currentLanguage");
+const currentFlag = document.querySelector("#currentFlag");
 const form = document.querySelector("#checkerForm");
 const resultPanel = document.querySelector("#resultPanel");
 const platformTabs = document.querySelectorAll("[data-platform]");
@@ -120,6 +121,17 @@ const managerQuery = document.querySelector("#managerQuery");
 
 let activeLanguage = "en";
 let activePlatform = "telegram";
+
+const languageFlags = {
+  ru: "🇷🇺",
+  en: "🇬🇧",
+  ar: "🇸🇦",
+  bd: "🇧🇩",
+  fr: "🇫🇷",
+  pt: "🇵🇹",
+  tr: "🇹🇷",
+  uz: "🇺🇿",
+};
 
 function normalize(value) {
   return value.trim().toLowerCase().replace(/\s+/g, "");
@@ -136,6 +148,7 @@ function applyLanguage(language) {
   document.documentElement.lang = activeLanguage === "bd" ? "bn" : activeLanguage;
   document.documentElement.dir = activeLanguage === "ar" ? "rtl" : "ltr";
   currentLanguage.textContent = activeLanguage;
+  currentFlag.textContent = languageFlags[activeLanguage] || languageFlags.en;
 
   document.querySelectorAll("[data-i18n]").forEach((node) => {
     const key = node.dataset.i18n;

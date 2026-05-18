@@ -194,6 +194,12 @@ a {
   text-transform: lowercase;
 }
 
+.language-current {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
 .chevron {
   width: 13px;
   height: 13px;
@@ -221,6 +227,9 @@ a {
 }
 
 .language-list button {
+  display: flex;
+  align-items: center;
+  gap: 9px;
   width: 100%;
   border: 0;
   background: transparent;
