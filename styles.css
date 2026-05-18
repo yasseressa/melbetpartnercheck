@@ -200,6 +200,107 @@ a {
   gap: 8px;
 }
 
+.flag {
+  position: relative;
+  display: inline-block;
+  width: 24px;
+  height: 16px;
+  flex: 0 0 24px;
+  overflow: hidden;
+  border-radius: 2px;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.45);
+}
+
+.flag-en {
+  background:
+    linear-gradient(90deg, transparent 41%, #ffffff 41%, #ffffff 59%, transparent 59%),
+    linear-gradient(0deg, transparent 37%, #ffffff 37%, #ffffff 63%, transparent 63%),
+    linear-gradient(90deg, transparent 45%, #c8102e 45%, #c8102e 55%, transparent 55%),
+    linear-gradient(0deg, transparent 43%, #c8102e 43%, #c8102e 57%, transparent 57%),
+    #012169;
+}
+
+.flag-ru {
+  background: linear-gradient(#ffffff 0 33.33%, #0039a6 33.33% 66.66%, #d52b1e 66.66%);
+}
+
+.flag-ar {
+  background: #006c35;
+}
+
+.flag-ar::before {
+  content: "";
+  position: absolute;
+  inset: 5px 8px;
+  border-radius: 50%;
+  box-shadow: -3px 0 0 1px #ffffff;
+}
+
+.flag-bd {
+  background: #006a4e;
+}
+
+.flag-bd::before {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  left: 8px;
+  top: 4px;
+  border-radius: 50%;
+  background: #f42a41;
+}
+
+.flag-fr {
+  background: linear-gradient(90deg, #002395 0 33.33%, #ffffff 33.33% 66.66%, #ed2939 66.66%);
+}
+
+.flag-pt {
+  background: linear-gradient(90deg, #006600 0 40%, #ff0000 40%);
+}
+
+.flag-pt::before {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  left: 8px;
+  top: 5px;
+  border-radius: 50%;
+  background: #ffcc00;
+}
+
+.flag-tr {
+  background: #e30a17;
+}
+
+.flag-tr::before {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  left: 6px;
+  top: 4px;
+  border-radius: 50%;
+  box-shadow: -2px 0 0 1px #ffffff;
+}
+
+.flag-tr::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: 15px;
+  top: 6px;
+  border-top: 2px solid transparent;
+  border-bottom: 2px solid transparent;
+  border-left: 4px solid #ffffff;
+}
+
+.flag-uz {
+  background: linear-gradient(#1eb6e7 0 30%, #ffffff 30% 36%, #ce1126 36% 42%, #ffffff 42% 58%, #ce1126 58% 64%, #ffffff 64% 70%, #009b3a 70%);
+}
+
 .chevron {
   width: 13px;
   height: 13px;

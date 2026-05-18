@@ -122,17 +122,6 @@ const managerQuery = document.querySelector("#managerQuery");
 let activeLanguage = "en";
 let activePlatform = "telegram";
 
-const languageFlags = {
-  ru: "🇷🇺",
-  en: "🇬🇧",
-  ar: "🇸🇦",
-  bd: "🇧🇩",
-  fr: "🇫🇷",
-  pt: "🇵🇹",
-  tr: "🇹🇷",
-  uz: "🇺🇿",
-};
-
 function normalize(value) {
   return value.trim().toLowerCase().replace(/\s+/g, "");
 }
@@ -148,7 +137,7 @@ function applyLanguage(language) {
   document.documentElement.lang = activeLanguage === "bd" ? "bn" : activeLanguage;
   document.documentElement.dir = activeLanguage === "ar" ? "rtl" : "ltr";
   currentLanguage.textContent = activeLanguage;
-  currentFlag.textContent = languageFlags[activeLanguage] || languageFlags.en;
+  currentFlag.className = `flag flag-${activeLanguage}`;
 
   document.querySelectorAll("[data-i18n]").forEach((node) => {
     const key = node.dataset.i18n;
